@@ -1,0 +1,11 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+{{ super() }}
+{{ post }}
+<div class="author">
+    <p class="author-text">
+        {{ author }} 
+    </p>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base2.html' %}
+
+
+{% block content %}
+{{ super() }}
+<h1>Posts</h1>
+<div class="row">
+    {% if posts|length > 0 %}
+        {% for p in posts %}
+        <div class="col-md-6 item">
+            <div class="item-in">
+                <h4>{{p.title}}</h4>
+                <div class="seperator"></div>
+                <p>{{ p.text[:50] | striptags }}</p>
+                <a href="{{ url_for('showPost', alias=p.url)}}">Read More
+                    <i class="fa fa-long-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+    <p>We don't have the articles</p>
+    {% endif %}
+</div>
+
+{% endblock %}

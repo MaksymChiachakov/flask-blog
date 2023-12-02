@@ -1,0 +1,6 @@
+{% extends 'admin/base_admin.html' %}
+
+{% block content %}
+{{ super() }}
+{{ post | safe }}
+{% endblock %}

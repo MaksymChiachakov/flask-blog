@@ -1,0 +1,14 @@
+{% extends 'base2.html' %}
+
+
+{% block content %}
+<form action="{{ url_for('addPost')}}", method="post", class="form-control">
+    <input type="text" name="title" placeholder="Enter your title please: " class="form-control"><br>
+    <input type="text" name="url" placeholder="Enter your url please: " class="form-control"><br>
+    <input type="text" name="text" placeholder="Enter your text please: " class="form-control"><br>
+    {% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{cat}}">{{msg}}</div>
+    {% endfor %}
+    <button class="btn-me-btn-success" type="submit">Add</button>
+</form>
+{% endblock %}

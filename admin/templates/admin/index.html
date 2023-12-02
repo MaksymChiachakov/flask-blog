@@ -1,0 +1,23 @@
+{% extends 'admin/base3.html' %}
+
+{% block content %}
+<div class="row">
+    {% if isLogged %}
+        <div class="col-md-6 item">
+            <div class="item-in">
+                <h4>Welcome!</h4>
+                <div class="seperator"></div>
+                <p>You can start working!</p>
+            </div>
+        </div>
+    {% else %}
+    <div class="col-md-6 item">
+        <div class="item-in">
+            <h4>Welcome!</h4>
+            <div class="seperator"></div>
+            <p>You must Sign in!</p>
+        </div>
+    </div>
+    {% endif %}
+</div>  
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'admin/base3.html' %}
+
+
+{% block content %}
+{{ super() }}
+<h1>All users</h1>
+<div class="row">
+    {% if list|length > 0 %}
+    {% for p in list %}
+        <div class="col-md-3 item">
+            <div class="item-in">
+                <h4>{{p.name}}</h4>
+                <div class="seperator"></div>
+                <p>{{ p.email }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    {% else%}
+    <p>We don't have the users</p>
+    {% endif %}
+</div>
+
+{% endblock %}

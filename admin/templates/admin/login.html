@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="static/img/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="{{ url_for('.static', filename='css/main.css') }}">
+</head>
+<body>
+<button id="Home">Home</button>
+<h2>Admin</h2>
+<div class="container" id="container">
+	<div class="form-container sign-in-container">
+		<form action="" method="post">
+			<h1>Admin</h1>
+			<span>use your account</span>
+			<input type="text" name="user" placeholder="Login" />
+			<input type="password" name="psw" minlength="5" placeholder="Password" />
+			{% for cat, msg in get_flashed_messages(True) %}
+			<div class="flash {{cat}}">{{msg}}</div>
+			{% endfor %}
+			<button>Sign In</button>
+		</form>
+	</div>
+	
+</div>
+</body>
+<script src="static/js/home.js"></script>
+</html>
+    

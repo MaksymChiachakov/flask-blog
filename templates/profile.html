@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="static/img/icon.png" type="image/x-icon">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <title>Profile</title>
+</head>
+<body>
+<button id="Home">Home</button>
+<h2>Profile</h2>
+<div class="container" id="container">
+	<div class="form-container sign-in-container">
+		<tr><td valign="top">
+            <div class="profile-ava">
+                <picture class="profile-picture"></picture>
+                    <img class="img-ava" src="{{ url_for('userava') }}">
+                </picture>
+            </div>
+            <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+                <p class="profile-load-file"><input type="file" name="file">
+                <p class="profile-load-upload"><input type="submit" value="Upload">
+            </form>
+        </td>
+	</div>
+	<div class="overlay-container">
+		<form action="{{ url_for('uploadData') }}" method="post">
+            <h1>Profile settings</h1>
+			<span>Update your personal details</span>
+			<input type="text" name="name" minlength="2" placeholder="{{ u.name }}" value="{{ u.name }}"/>
+			<input type="email" name="email" minlength="8" placeholder="{{ u.email }}" value="{{ u.email }}" /> 
+			<input type="password" name="psw" minlength="6" placeholder="Password" />
+            <input type="password" name="psw2" minlength="6" placeholder="Repeat password" />
+            {% for cat, msg in get_flashed_messages(True) %}
+			<div class="flash {{cat}}">{{msg}}</div>
+			{% endfor %}
+			<button id="Save">Save</button>
+            <a href="/profile/{{u.email}}/delete">Delete this account?</a>
+		</form>
+	</div>
+</div>
+</body>
+<script src="static/js/login.js"></script>
+<script src="static/js/home.js"></script>
+</html>

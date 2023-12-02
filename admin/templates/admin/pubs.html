@@ -1,0 +1,24 @@
+{% extends 'admin/base3.html' %}
+
+
+{% block content %}
+{{ super() }}
+<h1>All posts</h1>
+<div class="row">
+    {% if list|length > 0 %}
+        {% for p in list %}
+        <div class="col-md-6 item">
+            <div class="item-in">
+                <h4>{{p.title}}</h4>
+                <div class="seperator"></div>
+                <p>{{ p.text | striptags }}</p>
+                <p class="author-text">{{ p.author }}</p>
+                <a href="/admin/pubs/{{p.url}}/delete" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+    <p>We don't have the articles</p>
+    {% endif %}
+</div>
+{% endblock %}
