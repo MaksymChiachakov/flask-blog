@@ -52,6 +52,12 @@ def login():
 
     return render_template("admin/login.html")
 
+# Go to be Simple User
+@admin.route("/home")
+def go_back():
+    return redirect("/home")
+
+
 # Logout 
 @admin.route('/logout', methods=['GET', 'POST'])
 def logout():
