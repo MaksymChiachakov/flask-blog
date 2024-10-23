@@ -25,7 +25,7 @@ app.register_blueprint(admin, url_prefix='/admin') #/domaine/<url_prefix>/<URL-b
 # Login Manager
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
-login_manager.login_message = "Sign in for further access"
+login_manager.login_message = "Sign In is required"
 login_manager.login_message_category = "success"
 
 # Login

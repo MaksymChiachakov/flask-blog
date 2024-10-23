@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Mars Photos</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Photos from Mars</h1>
+        {% for i in photos %}
+        <div class="container-item">
+            <p>{{ i['earth_date'] }}</p>
+            <img src="{{ i['img_src'] }}" width="150px" height="150px">
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
