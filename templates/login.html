@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="static/img/icon.png" type="image/x-icon">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-  <title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="static/img/icon.png" type="image/x-icon">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<title>Login</title>
 </head>
+
 <body>
-<button id="Home">Home</button>
-<h2>Sign in</h2>
-<div class="container" id="container">
-	<div class="form-container sign-in-container">
-		
-		<form action="" method="post">
-			<h1>Sign in</h1>
-			<div class="social-container">
-				<a href="https://www.facebook.com/privacy/consent/gdp/?params%5Bapp_id%5D=1862952583919182&params%5Bdisplay%5D=%22popup%22&params%5Bdomain%5D=%22www.tiktok.com%22&params%5Bfallback_redirect_uri%5D=%22https%3A%5C%2F%5C%2Fwww.tiktok.com%5C%2F%22&params%5Bkid_directed_site%5D=false&params%5Blogger_id%5D=%22f24fef66e0b1dfc%22&params%5Bnext%5D=%22read%22&params%5Bredirect_uri%5D=%22https%3A%5C%2F%5C%2Fstaticxx.facebook.com%5C%2Fx%5C%2Fconnect%5C%2Fxd_arbiter%5C%2F%3Fversion%3D46%23cb%3Df334d13324b91fc%26domain%3Dwww.tiktok.com%26is_canvas%3Dfalse%26origin%3Dhttps%5Cu00253A%5Cu00252F%5Cu00252Fwww.tiktok.com%5Cu00252Ff39943708b67df8%26relation%3Dopener%26frame%3Df1d6d49f0c80c84%22&params%5Bresponse_type%5D=%22token%2Csigned_request%2Cgraph_domain%22&params%5Breturn_scopes%5D=false&params%5Bscope%5D=%5B%5D&params%5Bsdk%5D=%22joey%22&params%5Bsteps%5D=%7B%22read%22%3A%5B%22baseline%22%2C%22public_profile%22%5D%7D&params%5Btp%5D=%22unspecified%22&params%5Bcui_gk%5D=%22login_platformization_joey%2Clogin_platformization_read%22&source=gdp_delegated" class="social"><img class="header__img" src="{{ url_for('static', filename='img/facebook.png') }}" alt="law" width="28px" height="28px"></a>
-				<a href="https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?platform=google&client_id=1096011445005-sdea0nf5jvj14eia93icpttv27cidkvk.apps.googleusercontent.com&response_type=token&redirect_uri=https%3A%2F%2Fwww.tiktok.com%2Flogin%2F&state=%7B%22client_id%22%3A%221096011445005-sdea0nf5jvj14eia93icpttv27cidkvk.apps.googleusercontent.com%22%2C%22network%22%3A%22google%22%2C%22display%22%3A%22popup%22%2C%22callback%22%3A%22_hellojs_32frvr89%22%2C%22state%22%3A%22%22%2C%22redirect_uri%22%3A%22https%3A%2F%2Fwww.tiktok.com%2Flogin%2F%22%2C%22scope%22%3A%22basic%22%7D&scope=openid%20profile&prompt=consent&service=lso&o2v=2&theme=glif&flowName=GeneralOAuthFlow" class="social"><img class="header__img" src="{{ url_for('static', filename='img/google3.png') }}" alt="law" width="28px" height="28px"></a>
-				<a href="https://www.linkedin.com/" class="social"><img class="header__img" src="{{ url_for('static', filename='img/linkedin.png') }}" alt="law" width="28px" height="28px"></a>
-			</div>
-			<span>or use your account</span>
-			<input type="email" name="email" placeholder="Email" />
-			<input type="password" name="psw" minlength="6" placeholder="Password" />
-			{% for cat, msg in get_flashed_messages(True) %}
-			<div class="flash {{cat}}">{{msg}}</div>
-			{% endfor %}
-			<input type="checkbox" id="scales" name="scales" /><label class="checkbox-for-me" for="scales">Remember me</label>
-			<button>Sign In</button>
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-right">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signUp">Sign UP</button>
+	<button id="Home">Home</button>
+	<h2>Sign in</h2>
+	<div class="container" id="container">
+		<div class="form-container sign-in-container">
+
+			<form action="" method="post">
+				<h1>Sign in</h1>
+				<span style="margin-bottom: 16px;">or create your account</span>
+				<input type="email" name="email" placeholder="Email" />
+				<input type="password" name="psw" minlength="6" placeholder="Password" />
+				{% for cat, msg in get_flashed_messages(True) %}
+				<div class="flash {{cat}}">{{msg}}</div>
+				{% endfor %}
+				<input type="checkbox" id="scales" name="scales" /><label class="checkbox-for-me" for="scales">Remember
+					me</label>
+				<button>Sign In</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-right">
+					<h1>Welcome Back!</h1>
+					<p>To keep connected with us please login with your personal info</p>
+					<button class="ghost" id="signUp">Sign UP</button>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </body>
 <script src="static/js/login.js"></script>
 <script src="static/js/home.js"></script>
+
 </html>
