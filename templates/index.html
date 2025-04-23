@@ -9,9 +9,9 @@
     {% for p in posts %}
     <div class="col-md-6 item">
         <div class="item-in">
-            <h4>{{p.title}}</h4>
+            <h4 style="font-size: 36px;">{{p.title}}</h4>
             <div class="seperator"></div>
-            <p>{{ p.text[:50] | striptags }}...</p>
+            <p style="font-size: 16px;">{{ p.text[:300] | striptags }}...</p>
             <a href="{{ url_for('showPost', alias=p.url)}}">Read More
                 <i class="fa fa-long-arrow-right"></i>
             </a>

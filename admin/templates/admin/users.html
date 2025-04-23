@@ -7,13 +7,13 @@
 <div class="row">
     {% if list|length > 0 %}
     {% for p in list %}
-        <div class="col-md-3 item">
-            <div class="item-in">
-                <h4>{{p.name}}</h4>
-                <div class="seperator"></div>
-                <p>{{ p.email }}</p>
-            </div>
+    <div class="col-md-4 item">
+        <div class="item-in">
+            <h4>{{p.name}}</h4>
+            <div class="seperator"></div>
+            <p>{{ p.email }}</p>
         </div>
+    </div>
     {% endfor %}
     {% else%}
     <p>We don't have the users</p>

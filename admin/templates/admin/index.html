@@ -3,21 +3,21 @@
 {% block content %}
 <div class="row">
     {% if isLogged %}
-        <div class="col-md-6 item">
-            <div class="item-in">
-                <h4>Welcome!</h4>
-                <div class="seperator"></div>
-                <p>You can start working!</p>
-            </div>
+    <div class="col-md-6 item">
+        <div class="item-in">
+            <h4>Welcome</h4>
+            <div class="seperator"></div>
+            <p style="font-size: 24px;">You can start working! Have a nice day!</p>
         </div>
+    </div>
     {% else %}
     <div class="col-md-6 item">
         <div class="item-in">
-            <h4>Welcome!</h4>
+            <h4 style="font-size: 36px;">Welcome!</h4>
             <div class="seperator"></div>
-            <p>You must Sign in!</p>
+            <p style="font-size: 24px;">You must sign in to start working.</p>
         </div>
     </div>
     {% endif %}
-</div>  
+</div>
 {% endblock %}

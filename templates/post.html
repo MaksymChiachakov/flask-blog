@@ -2,10 +2,11 @@
 
 {% block content %}
 {{ super() }}
-{{ post }}
+<div style="font-size: 80px; font-weight: 400;">{{ title }}</div>
+<div style="white-space: pre-wrap; margin-top: 36px; font-size: 24px;">{{ post }}</div>
 <div class="author">
-    <p class="author-text">
-        {{ author }} 
+    <p class="author-text" style="font-size: 24px; margin-top: 24px; margin-bottom: 48px;">
+        Автор: {{ author }}
     </p>
 </div>
 {% endblock %}
